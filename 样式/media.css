@@ -1,0 +1,116 @@
+/* 三个了解更多的响应位置变化 */
+@media (min-width:512px){
+    .first-know-more{
+        left:12.4%;
+    }
+    .second-know-more{
+        left:12.95%;
+    }
+    .search-more{
+        left:3.5%;
+        top:77%;
+    }
+}
+@media (min-width:614px){
+    .first-know-more{
+        left:16%;
+    }
+    .second-know-more{
+        left:16.4%;
+    }
+    .search-more{
+        left:6%;
+        top:78%;
+    }
+}
+@media (min-width:768px){
+    .first-know-more{
+        left:19.3%;
+    }
+    .second-know-more{
+        left:19.9%;
+    }
+    .search-more{
+        left:9%;
+        top:78%;
+    }
+}
+@media (min-width:877px){
+    .first-know-more{
+        left:21%;
+    }
+    .second-know-more{
+        left:21.6%;
+    }
+    .search-more{
+        left:10.3%;
+        top:78%;
+    }
+}
+@media (min-width:1024px){
+    .first-know-more{
+        left:22.6%;
+    }
+    .second-know-more{
+        left:23.15%;
+    }
+    .search-more{
+        left:12%;
+        top:78%;
+    }
+}
+@media (min-width:1228px){
+    .first-know-more{
+        left:24.15%;
+    }
+    .second-know-more{
+        left:24.7%;
+    }
+    .search-more{
+        left:13%;
+    }
+}
+@media (min-width:1396px){
+    .first-know-more{
+        left:25.15%;
+    }
+    .second-know-more{
+        left:25.8%;
+    }
+    .search-more{
+        left:13.8%;
+    }
+}
+@media (min-width:1536px){
+    .first-know-more{
+        left:25.85%;
+    }
+    .second-know-more{
+        left:26.15%;
+    }
+    .search-more{
+        left:14.32%;
+    }
+}
+@media (min-width:1706px){
+    .first-know-more{
+        left:26.5%;
+    }
+    .second-know-more{
+        left:27%;
+    }
+    .search-more{
+        left:14.9%;
+    }
+}
+@media (min-width:1920px){
+    .first-know-more{
+        left:27.2%;
+    }
+    .second-know-more{
+        left:27.8%;
+    }
+    .search-more{
+        left:15.5%;
+    }
+}

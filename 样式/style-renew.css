@@ -1,0 +1,2097 @@
+/* 避免放大时出现侧边滚动条 */
+html {
+    overflow-x: hidden;
+}
+.side-menu{
+    display: none;
+}
+/* 头部栏由flex布局和浮动构成 */
+.top-bar-wrapper {
+    width: 100vw;
+    background-color: #000;
+    display: block;
+}
+
+.top-bar {
+    /* 设置最大宽度 */
+    max-width: 1800px;
+    width: 93.75%;
+    height: 25px;
+    margin: 0 auto;
+}
+
+.user {
+    height: 25px;
+    width: 314px;
+    line-height: 25px;
+    float: right;
+    display: flex;
+    background-color: #000;
+}
+
+.user span {
+    color: #cccccc;
+}
+
+.join {
+    display: flex;
+    width: 96px;
+    justify-content: space-around;
+}
+
+.join span {
+    display: block;
+    font-size: 12px;
+}
+
+.close-hidden-menu {
+    display: none;
+    background-color: #f7f7f7;
+    color: #5e5e5e;
+}
+
+.language {
+    display: inline-block;
+    width: 126px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.language span {
+    display: block;
+    font-size: 12px;
+}
+
+.close-language-menu {
+    display: none;
+    background-color: #f7f7f7;
+    color: #5e5e5e;
+}
+
+.login {
+    display: inline-block;
+    width: 61px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.login span {
+    display: block;
+    font-size: 12px;
+}
+
+.hidden-menu {
+    /* 菜单出现时的缓冲效果 */
+    transition: 0.6s;
+    overflow: hidden;
+    height: 0px;
+    width: 100vw;
+    background-color: #f7f7f7;
+}
+
+.hidden-menu-inner-wrapper {
+    width: 95%;
+    /* 设置最大宽度 */
+    max-width: 1268px;
+    height: 163px;
+    margin: 0 auto;
+    /* flex布局获得较为平均布局 */
+    display: flex;
+}
+
+.hidden-menu-inner-wrapper ul {
+    width: 20%;
+    height: 163px;
+}
+
+.hidden-menu-inner-head {
+    color: #4d4d4d;
+    padding-top: 40px;
+    height: 45.64px;
+}
+
+.first-hidden-menu-angle-right {
+    color: #c7000b;
+}
+
+.hidden-menu-inner-head i {
+    /* 箭头的向右浮动缓冲效果 */
+    transition: 1s;
+}
+
+.hidden-menu-inner-head a:hover {
+    text-decoration: underline;
+}
+
+.hidden-menu-inner-head a:hover i {
+    /* 箭头向右浮动效果 */
+    transform: translateX(7px);
+    color: #c7000b;
+}
+
+.first-hidden-menu-inner-head {
+    font-weight: 600;
+}
+
+.hidden-menu-inner-main {
+    width: 80%;
+    font-size: 14px;
+    color: #808080;
+}
+
+.language-menu {
+    width: 100%;
+    transition: 0.6s;
+    height: 0px;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.language-wrapper {
+    width: 95%;
+    /* 设置最大宽度 */
+    max-width: 1256px;
+    margin: 0 auto;
+}
+
+.change-language-head {
+    height: 80px;
+    line-height: 80px;
+    padding-top: 40px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.change-language-main {
+    /* 使用弹性布局 */
+    display: flex;
+    width: 100%;
+}
+
+.change-language-main ul {
+    width: 20%;
+}
+
+.change-language-main ul li {
+    height: 45%;
+    width: 100%;
+    color: #80808f;
+}
+
+.change-language-main ul li a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.chinese-angle {
+    color: #c7000b;
+}
+
+.change-language-main ul li span {
+    color: #000;
+}
+
+.chinese {
+    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nav-wrapper {
+    width: 100vw;
+    height: 77px;
+    /* 开启相对定位给菜单容器进行定位 */
+    position: relative;
+    z-index: 66;
+    background-color: #fff;
+}
+
+.nav {
+    max-width: 1820px;
+    width: 93.75%;
+    height: 77px;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.nav-inner {
+    display: flex;
+    height: 100%;
+    vertical-align: middle;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-inner a {
+    color: #333333;
+}
+
+.logo {
+    padding-top: 10px;
+    height: 100%;
+    line-height: 77px;
+    text-align: center;
+}
+
+.logo a {
+    vertical-align: middle;
+}
+
+.logo a img {
+    width: 133px;
+    height: 30px;
+}
+
+.menu-list {
+    display: flex;
+    height: 100%;
+    width: 700px;
+    justify-content: space-evenly;
+}
+
+.menu-list .nav-menu-angle {
+    /* 150%布局下才会出现的小箭头 */
+    display: none;
+    float: right;
+}
+
+.menu-inner-wrapper {
+    /* 不设置宽度,让子元素宽度撑开 */
+    font-size: 15px;
+    height: 100%;
+    line-height: 77px;
+    vertical-align: middle;
+    display: flex;
+}
+
+.menu-inner-wrapper .menu-inner {
+    display: inline-block;
+    height: 100%;
+    /* 防止hover时出现下划线时整体上移1像素 */
+    margin-top: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.menu-inner-wrapper .menu-inner:hover {
+    border-bottom: 1px solid red;
+}
+
+.first-menu-wrapper:hover~.all-shadow {
+    /* hover状态下出现全屏阴影 */
+    display: block;
+}
+
+.first-menu-wrapper:hover .first-menu {
+    display: block;
+}
+/* 五大菜单均为在开启了相对定位后与导航栏对齐,设置display:none,在菜单容器的hover状态下display属性变为block */
+.first-menu {
+    display: none;
+    background-color: #fff;
+    z-index: 55;
+    width: 100vw;
+    height: 570px;
+    position: absolute;
+    top: 77px;
+    left: 0;
+}
+
+.first-menu-inner {
+    height: 80%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.first-menu-inner-shop {
+    display: flex;
+    margin: 0 auto;
+    width: 95%;
+    height: 100%;
+}
+
+.huawei-shop {
+    width: 52.5%;
+    height: 100%;
+}
+
+.huawei-shop ul {
+    height: 50%;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.huawei-shop ul li {
+    width: 15%;
+}
+
+.huawei-shop ul li a {
+    color: #666666;
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+    line-height: 1;
+}
+/* hover状态下下划线 */
+.huawei-shop ul li a:hover .decoration {
+    text-decoration: underline;
+}
+
+.huawei-shop ul li a .decoration {
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.huawei-shop ul li a span {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+}
+
+.huawei-shop ul li a span i {
+    font-size: 70px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.above-huawei-shop li {
+    margin-top: 80px;
+}
+
+.under-huawei-shop li {
+    margin-bottom: 70px;
+}
+
+.goods-picture {
+    text-align: center;
+    line-height: 825px;
+    width: 50%;
+}
+
+.goods-picture a {
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+}
+
+.goods-picture a img {
+    width: 100%;
+    height: 100%;
+}
+
+.first-menu-other-wrapper {
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.first-menu-inner-other {
+    height: 100%;
+    width: 100%;
+    /* 最大宽度 */
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.first-menu-inner-left-other {
+    float: left;
+    display: flex;
+    width: 35%;
+    height: 100%;
+    padding-left: 100px;
+}
+
+.first-menu-inner-left-other div {
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    /* 避免文字的溢出 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 114px;
+}
+
+.first-menu-inner-left-other div a {
+    height: auto;
+    overflow: hidden;
+    color: #666666;
+}
+
+.first-menu-inner-left-other div a i {
+    display: inline-block;
+    position: relative;
+    font-size: 60px;
+    top: 5px;
+    color: #c7000b;
+}
+
+.first-menu-inner-left-other div a .share-icon {
+    display: none;
+    color: #000;
+    font-size: 20px;
+}
+
+.first-menu-inner-left-other div a:hover span {
+    color: #000;
+}
+
+.first-menu-inner-left-other div a:hover .share-icon {
+    color: #000;
+    display: inline;
+    position: relative;
+}
+
+.first-menu-inner-right-other {
+    float: right;
+    width: 20%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.first-menu-inner-right-other a {
+    display: inline-block;
+    height: auto;
+    right: -40px;
+    top: 20px;
+    margin: auto;
+    position: relative;
+}
+
+.first-menu-inner-right-other a i {
+    font-size: 30px;
+}
+
+.second-menu-wrapper:hover~.all-shadow {
+    display: block;
+}
+/* 以下类似,不作赘述 */
+.second-menu-wrapper:hover .second-menu {
+    display: block;
+}
+
+.second-menu {
+    display: none;
+    background-color: #fff;
+    z-index: 55;
+    width: 100vw;
+    height: 540px;
+    position: absolute;
+    left: 0;
+    top: 77px;
+}
+
+.second-menu-inner {
+    width: 87%;
+    max-width: 1670px;
+    height: 90%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.second-menu-left-inner {
+    width: 40%;
+    height: 82%;
+}
+
+.second-menu-left-inner .head {
+    width: 95%;
+    height: 13%;
+    background-color: #fff;
+    padding-top: 20px;
+    font-size: 22px;
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 5px;
+}
+
+.second-menu-left-inner .title {
+    display: flex;
+    height: 50px;
+}
+
+.second-menu-left-inner .title div {
+    width: 50%;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.second-menu-left-inner .main {
+    width: 100%;
+    height: 68%;
+    display: flex;
+}
+
+.second-menu-left-inner .main ul {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.second-menu-left-inner .main ul div {
+    font-size: 17px;
+    font-weight: 550;
+}
+
+.second-menu-left-inner .main ul li {
+    width: 50%;
+    height: 50px;
+}
+
+.second-menu-left-inner .main ul li a {
+    color: #a8a8a8;
+}
+
+.second-menu-left-inner .main ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.second-menu-right-inner {
+    width: 50%;
+    height: 82%;
+    display: flex;
+}
+
+.outer-ul {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.second-menu-right-inner-head-wrapper {
+    width: 90%;
+    height: 13%;
+    padding-top: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-bottom: 5px;
+    font-size: 22px;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.second-menu-right-inner-head {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inner-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90%;
+}
+
+.inner-ul li {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.inner-ul li a {
+    display: inline;
+    color: #a8a8a8;
+}
+
+.inner-ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.second-menu-inner .search-more:hover .right-angle {
+    transform: translateX(50%);
+    transition: 0.3s;
+}
+
+.second-menu-inner .right-angle {
+    color: #cb111b;
+    font-size: 18px;
+}
+
+.second-menu .second-menu-others-wrapper {
+    width: 100vw;
+    height: 18%;
+    background-color: #f7f7f7;
+}
+
+.second-menu-other {
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    background-color: #f7f7f7;
+    position: relative;
+    right: 6px;
+    margin: 0 auto;
+}
+
+.second-menu-left-other {
+    float: left;
+    width: 65%;
+    height: 100%;
+}
+
+.second-menu-left-other div {
+    width: 25%;
+    float: left;
+    height: 100%;
+    line-height: 97.2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.second-menu-left-other div:hover .share-icon {
+    visibility: visible;
+}
+
+.second-menu-left-other div:hover span {
+    color: #000;
+}
+
+.second-menu-left-other div .pre {
+    font-size: 40px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    color: #c7000b;
+}
+
+.second-menu-left-other div .share-icon {
+    visibility: hidden;
+    color: #000;
+}
+
+.second-menu-left-other div span {
+    font-size: 15px;
+    color: #666;
+}
+
+.second-menu-left-other .first-left {
+    margin-left: 100px;
+}
+
+.second-menu-right-other {
+    float: right;
+    color: #000;
+    width: 10%;
+    height: 100%;
+    line-height: 97.2px;
+    text-align: center;
+    margin-right: 100px;
+}
+
+.second-menu-right-other i {
+    font-size: 30px;
+}
+
+.third-menu-wrapper:hover~.all-shadow {
+    display: block;
+}
+
+.third-menu-wrapper:hover .third-menu {
+    display: block;
+}
+
+.third-menu {
+    display: none;
+    background-color: #fff;
+    z-index: 55;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    height: 400px;
+    top: 77px;
+    opacity: 1;
+}
+
+.third-menu-inner {
+    width: 82%;
+    height: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+.choice-wrapper {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.choice-wrapper ul {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.choice-wrapper ul .head {
+    font-size: 20px;
+    width: 90%;
+    height: 20%;
+    border-bottom: 2px solid #e6e6e6;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.choice-wrapper ul li {
+    height: 10%;
+    width: 100%;
+    line-height: 40px;
+}
+
+.choice-wrapper ul li a:hover {
+    text-decoration: underline;
+}
+
+.search-more:hover .right-angle {
+    transform: translateX(50%);
+    transition: 0.3s;
+}
+
+.choice-wrapper .right-angle {
+    color: #cb111b;
+    font-size: 18px;
+}
+
+.third-menu-inner .close {
+    width: 10%;
+    float: right;
+    height: 10%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    bottom: 80px;
+    z-index: 66;
+}
+
+.fourth-menu-wrapper:hover~.all-shadow {
+    display: block;
+}
+
+.fourth-menu-wrapper:hover .fourth-menu {
+    display: block;
+}
+
+.fourth-menu {
+    display: none;
+    width: 100vw;
+    background-color: #fff;
+    z-index: 55;
+    position: absolute;
+    height: 400px;
+    top: 77px;
+    left: 0;
+    opacity: 1;
+}
+
+.fourth-menu-inner {
+    max-width: 100px;
+    width: 82%;
+    height: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.fourth-menu-inner .right-angle {
+    color: #cb111b;
+    font-size: 18px;
+}
+
+.fourth-menu-inner .close {
+    width: 10%;
+    float: right;
+    height: 10%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    bottom: 80px;
+    z-index: 66;
+}
+
+.fifth-menu-wrapper:hover~.all-shadow {
+    display: block;
+}
+
+.fifth-menu-wrapper:hover .fifth-menu {
+    display: block;
+}
+
+.fifth-menu {
+    display: none;
+    background-color: #fff;
+    z-index: 55;
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 77px;
+    left: 0;
+}
+
+.fifth-menu-inner {
+    width: 88%;
+    height: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.fifth-menu-inner a:hover {
+    text-decoration: underline;
+}
+
+.fifth-menu-inner div {
+    width: 33%;
+    height: 100%;
+}
+
+.first-fifth-menu-inner .first-fifth-menu-inner-head {
+    width: 95%;
+    height: 20%;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.first-fifth-menu-inner-main {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.first-fifth-menu-inner-main li {
+    height: 16%;
+    flex-direction: column;
+}
+
+.second-fifth-menu-inner ul {
+    width: 50%;
+    float: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.second-fifth-menu-inner ul .second-fifth-menu-inner-head {
+    height: 20%;
+    width: 90%;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.second-fifth-menu-inner ul ol {
+    width: 100%;
+    height: 80%;
+}
+
+.second-fifth-menu-inner ul ol li {
+    height: 16%;
+    width: 100%;
+}
+
+.third-fifth-menu-inner .third-fifth-menu-inner-picture {
+    width: 80%;
+    height: 58%;
+    margin: 30px;
+}
+
+.third-fifth-menu-inner-picture img {
+    width: 325px;
+}
+
+.third-fifth-menu-inner .third-fifth-menu-inner-close {
+    width: 87%;
+    height: 42%;
+    position: relative;
+}
+
+.third-fifth-menu-inner-close a {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    font-size: 30px;
+}
+/* 150%布局下出现的第六个菜单 */
+.sixth-menu-wrapper {
+    display: none;
+}
+/* 全屏阴影具体样式 */
+.all-shadow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 33;
+    display: none;
+    left: 0;
+    top: 102px;
+}
+
+.nav-right {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    position: relative;
+}
+
+.search-input {
+    position: absolute;
+    left: -239px;
+    display: block;
+    transform: scaleX(0) scaleY(0);
+}
+/* 搜索框具体样式 */
+.search-input input {
+    height: 25px;
+    width: 340px;
+    padding: 10px;
+    outline: none;
+    border: #86807f 1px solid;
+    transform: scaleX(0) scaleY(0);
+}
+/* 阴影效果 */
+.search-input input:focus{
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+.search-input a {
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    font-size: 30px;
+    color: #86807f;
+    display: none;
+}
+
+.buy {
+    visibility: visible;
+    line-height: 77px;
+    width: 122px;
+    height: 100%;
+    margin-top: 15.4px;
+    margin-bottom: 15.4px;
+}
+
+.buy:hover .hidden-buy {
+    display: block;
+}
+
+.buy:hover .shop-angle-down {
+    display: none;
+}
+
+.buy:hover .shop-angle-up {
+    display: inline;
+}
+
+.buy .shop-angle-up {
+    display: none;
+}
+
+.unlock {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+.unlock i {
+    font-size: 23px;
+}
+/* 在线购买hover状态下出现的框 */
+.hidden-buy {
+    display: none;
+    width: 140px;
+    height: 80px;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #d4d4d4;
+    border-top: none;
+    right: 20px;
+    z-index: 99;
+}
+
+.huawei-service {
+    height: 40px;
+    width: 140px;
+    line-height: 40px;
+    font-size: 15px;
+}
+
+.huawei-service a {
+    color: #777777;
+}
+
+.huawei-service a:hover {
+    color: #000;
+}
+
+.huawei-icon {
+    font-size: 21px;
+}
+
+.huawei-shop {
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.nav-right .first-search {
+    font-size: 25px;
+    line-height: 77px;
+}
+
+.nav-close {
+    position: relative;
+    left: 0px;
+}
+
+.nav-right .first-close {
+    font-size: 25px;
+    line-height: 77px;
+}
+
+.nav-right .second-close {
+    font-size: 25px;
+    line-height: 77px;
+}
+
+.nav-right .second-search {
+    font-size: 25px;
+    line-height: 77px;
+}
+
+.nav-search {
+    cursor: pointer;
+    display: block;
+}
+
+.nav-search2 {
+    cursor: pointer;
+    display: none;
+}
+
+.nav-close {
+    position: relative;
+    display: none;
+    cursor: pointer;
+    right: 32px;
+}
+
+.nav-right .search {
+    display: none;
+}
+
+.nav-right .bars {
+    font-size: 25px;
+    line-height: 77px;
+    text-align: center;
+    width: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-close2 {
+    display: none;
+    font-size: 25px;
+    line-height: 77px;
+    text-align: center;
+    width: 40px;
+    cursor: pointer;
+}
+
+.img-list-wrapper-wrapper {
+    /* 根据图片比例设置宽高比,实现图片大小随屏幕改变而比例不发生变化 */
+    width: 100vw;
+    height: 34vw;
+    max-width: 1920px;
+    max-height: 647px;
+    margin: 0 auto;
+}
+
+.img-list-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.images-wrapper {
+    display: flex;
+    position: absolute;
+    transition: 0.3s;
+    width: 200%;
+}
+
+.imgs {
+    position: relative;
+}
+
+.first-know-more {
+    display: block;
+    color: #11115c;
+    border: 1px solid #11115c;
+    line-height: 52px;
+    position: absolute;
+    width: 200px;
+    height: 52px;
+    z-index: 999;
+    top: 45%;
+    text-align: center;
+}
+
+.first-know-more:hover {
+    color: #ffffff;
+    background-color: #c7000b;
+    border-color: #c7000b;
+}
+
+.second-know-more {
+    display: block;
+    color: #11115c;
+    border: 1px solid #11115c;
+    line-height: 52px;
+    position: absolute;
+    width: 200px;
+    height: 52px;
+    z-index: 999;
+    top: 60%;
+    text-align: center;
+}
+
+.second-know-more:hover {
+    color: #ffffff;
+    background-color: #c7000b;
+    border-color: #c7000b;
+}
+
+.img-list {
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* 图片下的阴影设置 */
+.img-list-wrapper-wrapper .img-list .half-shadow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0.2;
+    height: 30%;
+}
+
+.head-images-left-angle,
+.head-images-right-angle {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    font-size: 60px;
+    z-index: 12;
+    top: 42%;
+    bottom: 58%;
+}
+
+.head-images-left-angle span,
+.head-images-right-angle span {
+    color: #f2918d;
+}
+
+.head-images-left-angle span:hover,
+.head-images-right-angle span:hover {
+    color: #f66f6a;
+}
+
+.img-list:hover .head-images-left-angle {
+    opacity: 1;
+    transition:1s;
+}
+
+.img-list:hover .head-images-right-angle {
+    opacity: 1;
+    transition:1s;
+}
+
+.head-images-left-angle {
+    left: 3%;
+}
+
+.head-images-right-angle {
+    right: 3%;
+}
+
+.first-head-picture,
+.second-head-picture {
+    position: absolute;
+    cursor: pointer;
+    z-index: 88;
+    width: 6%;
+    height: 0.5%;
+    bottom: 3%;
+    background-color: #d5d8db;
+}
+
+.first-head-picture {
+    left: 43.3%;
+}
+
+.second-head-picture {
+    right: 43.3%;
+}
+
+.img-list img {
+    width: 100%;
+    height: 100%;
+}
+
+.back-top {
+    position: fixed;
+    z-index: 87;
+    width: 40px;
+    height: 82px;
+    display: flex;
+    right: 0;
+    bottom: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.back-top-wrapper-wrapper {
+    background-color: #a4a4a4;
+}
+
+.back-top-wrapper-wrapper:hover {
+    background-color: #888888;
+}
+
+.back-top a {
+    display: block;
+    height: 40px;
+    width: 40px;
+    background-color: #d75862;
+    line-height: 40px;
+}
+
+.back-top a span {
+    display: block;
+    position: relative;
+    color: #fbf7f6;
+    left: 6px;
+}
+
+.back-top .back-top-wrapper-wrapper {
+    display: block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.back-top .back-top-wrapper-wrapper span {
+    display: block;
+    position: relative;
+    color: #fbf7f6;
+    left: 6px;
+}
+
+.back-top .back-top-wrapper {
+    left: 7px;
+    bottom: 2px;
+    font-size: 40px;
+}
+/* 大标题样式 */
+.information {
+    width: 100vw;
+    height: 230px;
+    position: relative;
+}
+
+.information .title {
+    line-height: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-51%);
+    vertical-align: middle;
+    white-space: nowrap;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.title-underline {
+    width: 50px;
+    height: 130px;
+    border-bottom: 5px solid #c7000b;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.picture-wrapper {
+    /* 相同的套路,按照图片比例设置宽高保证图片比例不改变 */
+    width: 90vw;
+    height: 82.18vw;
+    max-width: 1400px;
+    max-height: 1274px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.pictures-text-title {
+    font-size: 14px;
+    height: auto;
+    line-height: 30px;
+}
+
+.pictures-text-name {
+    font-size: 25px;
+    font-weight: 600;
+    height: auto;
+    line-height: 40px;
+    width: 80%;
+}
+
+.pictures-text-adj {
+    font-size: 17px;
+    color: #b5b6b7;
+    line-height: 25px;
+    width: 80%;
+}
+
+.know-more {
+    font-weight: 520;
+    line-height: 72px;
+}
+
+.know-more:hover i {
+    transform: translateX(7px);
+}
+
+.picture-wrapper img {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    opacity: .8;
+}
+/* hover状态时图片的放大效果 */
+.all-picture:hover .pictures {
+    transform: scaleX(1.05) scaleY(1.05);
+}
+
+.all-picture {
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
+    background-image: linear-gradient(to top ,rgb(0, 0, 0),rgb(145, 145, 145));
+}
+/* hover状态时出现的阴影效果 */
+.all-picture:hover{
+    background-image: linear-gradient(to top ,rgb(0, 0, 0),rgb(87, 87, 87));
+}
+.all-picture:hover img{
+    opacity: .65;
+}
+/* hover状态时文本上移效果 */
+.all-picture:hover .pictures-text {
+    bottom: 0px;
+}
+
+.pictures-text {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    z-index: 32;
+    /* 初始位置 */
+    bottom: -50px;
+    left: 20px;
+    transition: 0.6s;
+    color: #fff;
+    /* 设置为弹性容器并将元素反向垂直方向排列,以保证了解更多这个永远在同一个位置且其他内容会因文本量而自动撑高 */
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.pictures-text i {
+    color: #c70812;
+    transition: 0.8s;
+}
+
+/* 图片均按照比例设置宽高比 */
+.first-picture-wrapper {
+    width: 100%;
+    height: 34.66%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-picture1 {
+    width: 65.5%;
+    height: 100%;
+}
+
+.first-picture2 {
+    width: 32.5%;
+    height: 100%;
+}
+
+.second-picture-wrapper {
+    width: 100%;
+    height: 34.66%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-picture1 {
+    width: 32.5%;
+    height: 100%;
+}
+
+.second-picture2 {
+    width: 65.5%;
+    height: 100%;
+}
+
+.third-picture-wrapper {
+    width: 100%;
+    height: 24.38%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.third-picture1 {
+    width: 32.5%;
+    height: 100%;
+}
+
+.third-picture2 {
+    width: 31.8%;
+    height: 100%;
+}
+
+.third-picture3 {
+    width: 31.8%;
+    height: 100%;
+}
+/* 与滚动图类似的设计,不作赘述 */
+.second-img-list-wrapper {
+    margin-top: 100px;
+}
+
+.second-img-list-wrapper .search-more {
+    position: absolute;
+    width: 164px;
+    height: 34px;
+    line-height: 38px;
+    font-size: 23px;
+    text-align: center;
+    bottom: 14%;
+    border: 2px white solid;
+}
+
+.second-img-list-wrapper .search-more:hover {
+    background-color: #c7000b;
+    border-color: #c7000b;
+}
+
+.second-img-list-wrapper .search-more a {
+    color: white;
+}
+/* 按照官网比例设置宽高比 */
+.second-picture-wrapper-plus {
+    width: 90vw;
+    max-width: 1400px;
+    height: 36.92vw;
+    max-height: 513.79px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+/* hover状态下图片放大效果 */
+.activities:hover img {
+    transform: scaleX(1.05) scaleY(1.05);
+}
+
+.second-picture-wrapper-plus li {
+    overflow: hidden;
+    position: relative;
+    width: 31.765%;
+    height: 100%;
+    background-color: #fff;
+}
+/* hover状态下背景颜色改变 */
+.second-picture-wrapper-plus li:hover .news-decoration {
+    background-color: #f2f2f2;
+}
+
+.second-picture-wrapper-plus li ul {
+    width: 100%;
+    height: 100%;
+    /* 超出范围时出现滚动条 */
+    overflow-y: auto;
+}
+
+.second-picture-wrapper-plus li ul ol:first-child {
+    margin-top: 25px;
+}
+
+.second-picture-wrapper-plus li ul ol {
+    width: 90%;
+    padding: 5%;
+    margin-bottom: 10px;
+}
+
+.second-picture-wrapper-plus li ul ol a:hover div {
+    color: #c7000b;
+}
+
+.second-picture-wrapper-plus li ul ol div {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.second-picture-wrapper-plus li ul ol .date {
+    font-size: 15px;
+    font-weight: 350;
+    color: #666;
+    padding-top: 2px;
+}
+/* 新闻活动栏左上角的小方块 */
+.second-picture-wrapper-plus li .news-title {
+    width: 20.6%;
+    height: 6.344%;
+    position: absolute;
+    background-color: #8c9797;
+    color: #fff;
+    left: 0;
+    top: 0;
+    z-index: 22;
+    white-space: nowrap;
+}
+
+.second-picture-wrapper-plus li .news-title span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.second-picture-wrapper-plus li .news-title span a {
+    color: #fff;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.second-picture-wrapper-plus li .cover {
+    width: 100%;
+    height: 6.344%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 21;
+}
+
+.second-picture-wrapper-plus li img {
+    width: 100%;
+    height: 54.33%;
+    vertical-align: top;
+    transition: 0.3s;
+}
+
+.second-picture-wrapper-plus li .news-decoration {
+    background-color: #f8f8f8;
+    width: 90%;
+    height: 35.67%;
+    position: relative;
+    z-index: 32;
+    padding: 5%;
+    overflow: hidden;
+}
+
+.first-decoration {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.location {
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+.location span {
+    font-size: 20px;
+}
+
+.activities-date {
+    margin-bottom: 6px;
+    color: #333333;
+}
+
+.activities-text {
+    line-height: 150%;
+    color: #666666;
+}
+/* 底部的两个超链接方块 */
+.more-information-wrapper {
+    height: 95px;
+    width: 1920px;
+    max-width: 100vw;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 30px;
+}
+
+.more-information-wrapper div {
+    width: 270px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.more-information {
+    width: 125px;
+    height: 37px;
+    border: 2px solid #000;
+}
+
+.more-information:hover {
+    background-color: #c7000b;
+    border-color: #c7000b;
+}
+
+.more-information:hover a {
+    color: #fff;
+}
+
+.more-information a {
+    display: block;
+    text-align: center;
+    line-height: 37px;
+    color: #000;
+}
+/* /* 底部栏具体样式设计,与菜单样式设计类似 */
+footer {
+    padding-top: 30px;
+    width: 100vw;
+    height: 750px;
+    background-color: #f2f2f2;
+}
+
+.footer-inner {
+    width: 88%;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.top-line {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.top-line a {
+    display: inline-block;
+    padding-top: 8px;
+    font-size: 20px;
+    color: #595757;
+}
+
+.bottom-search {
+    padding-top: 0px;
+    float: right;
+    font-size: 30px;
+}
+
+.footer-main {
+    height: 57%;
+    width: 95%;
+    padding-top: 45px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.footer-main ul {
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+}
+
+.footer-main ul a {
+    display: block;
+    height: 11%;
+}
+
+.footer-main-head {
+    width: 100%;
+    height: 15%;
+    line-height: 55.575px;
+    font-size: 20px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 150px;
+}
+
+.left-footer-bottom {
+    display: flex;
+    width: 450px;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.left-footer-bottom a {
+    display: block;
+    height: 100%;
+    line-height: 150px;
+    font-size: 14px;
+    color: #5a5858;
+}
+
+.right-footer-bottom {
+    display: flex;
+    width: 320px;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.right-footer-bottom a {
+    display: block;
+    height: 100%;
+    line-height: 150px;
+    color: #666;
+}
+
+.right-footer-bottom a:hover {
+    color: #333;
+}
+
+.footer-others-wrapper {
+    width: 100vw;
+    height: 70px;
+    background-color: #e6e6e6;
+    position: absolute;
+    left: 0;
+}
+
+.footer-others {
+    line-height: 70px;
+    height: 100%;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.footer-others span,
+.footer-others a {
+    color: #666666;
+    font-size: 14px;
+}
+
+.column-line {
+    color: #c2c3c3;
+}
+/* 150%布局下出现的菜单 */
+.side-menu {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: #f8f8f8;
+    /* 设置左偏移量,实现隐藏 */
+    left: 100vw;
+    /* 溢出时候出现滚动条 */
+    overflow: scroll;
+    z-index: 100;
+}
+
+.side-search-wrapper {
+    height: 88px;
+    width: 100vw;
+    background-color: #fff;
+    border-bottom: 2px solid #d4d4d4;
+    /* 设置粘性定位保证其固定在视口最上 */
+    position: sticky;
+    display: flex;
+    margin: 0 auto;
+    top: 0;
+}
+
+.side-search {
+    width: 942px;
+    height: 68px;
+    padding-top: 20px;
+    display: flex;
+}
+
+.search-wrapper {
+    width: 92%;
+    height: 65%;
+    outline: none;
+    margin: 0 auto;
+}
+
+.search-wrapper input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.side-close {
+    position: relative;
+    width: 70px;
+    height: 100%;
+    /* 关闭其弹性保证大小不变而搜索框大小随着视口宽度改变而改变 */
+    flex: none;
+    line-height: 88px;
+    font-size: 40px;
+    text-align: center;
+    color: #86807f;
+    cursor: pointer;
+}
+
+.side-search-inner {
+    position: absolute;
+    right: 90px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.side-main-wrapper {
+    width: 100%;
+}
+
+.side-main-head {
+    width: 95%;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+    color: #333333;
+    margin-top: 16px;
+    font-size: 18px;
+    border-bottom: 2px solid #d4d4d4;
+}
+
+.shop-list {
+    width: 95%;
+    margin: 0 auto;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 2px solid #d4d4d4;
+}
+
+.shop-list a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+/* 隐藏菜单出现时的动画效果 */
+@keyframes slide {
+    from {
+        left: 100vw;
+    }
+    to {
+        left: 0;
+    }
+}
+/* 隐藏菜单返回时出现的动画效果 */
+@keyframes slide-back {
+    from {
+        left: 0;
+    }
+    to {
+        left: 100vw;
+    }
+}
+/* 导航栏内菜单和搜索框的放大效果 */
+@keyframes big {
+    from {
+        transform: perspective(500px) translateZ(-200000px);
+    }
+    to {
+        transform: none;
+    }
+}
+/* 导航栏内菜单和搜索框的缩小效果 */
+@keyframes small {
+    from {
+        transform: none;
+    }
+    to {
+        transform: perspective(500px) translateZ(-200000px);
+    }
+}
+@keyframes big2{
+    from{
+        transform: scaleX(0) scaleY(0);
+        transform-origin:right 50%;
+    }
+    to{
+        transform: scaleX(1) scaleY(1);
+        transform-origin:right 50%;
+    }
+}
+@keyframes small2{
+    from{
+        transform: scaleX(1) scaleY(1);
+        transform-origin:right 50%;
+    }
+    to{
+        transform: scaleX(0) scaleY(0);
+        transform-origin:right 50%;
+    }
+}
+/* 响应式布局具体样式 */
+@media only screen and (max-width: 1215px) {
+    .nav-wrapper{
+        /* 150%布局下开启粘性定位保证其固定在视口顶部而不脱离文档流 */
+        position:sticky;
+        top: 0;
+    }
+    .side-menu{
+        display: block;
+    }
+    .top-bar-wrapper {
+        /* 150%布局下头部栏的位置改变 */
+        position: fixed;
+        width: 100vw;
+        height: 130px;
+        bottom: 0;
+        background-color: #f8f8f8;
+        z-index: 99;
+        left: 100vw;
+    }
+    .top-bar {
+        width: 60%;
+        height: 100%;
+    }
+    /* 头部栏内部样式改变 */
+    .user {
+        width: 100%;
+        height: 100%;
+        background-color: #f8f8f8;
+    }
+    .user .top-bar-angle {
+        display: none;
+    }
+    .user .main-icon {
+        display: block;
+        font-size: 50px;
+        width: 100%;
+        text-align: center;
+        height: 5px;
+    }
+    .user .join {
+        width: 33%;
+        line-height: 130px;
+    }
+    .user .join span {
+        font-size: 20px;
+        color: #000;
+    }
+    .user .language {
+        width: 33%;
+        line-height: 130px;
+    }
+    .user .language span {
+        font-size: 20px;
+        color: #000;
+    }
+    .user .login {
+        width: 33%;
+        line-height: 130px;
+    }
+    .user .login span {
+        font-size: 20px;
+        color: #000;
+    }
+    .buy{
+        visibility: hidden;
+    }
+    .nav-right .bars{
+        display: block;
+    }
+    .nav-search{
+        display: none;
+    }
+    .nav-search2{
+        display: block;
+    }
+    /* 150%布局下五大菜单的定位改变,隐藏在屏幕一侧 */
+    .menu-list {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        top: 77px;
+        left: 100vw;
+        z-index: 88;
+        background-color: #f8f8f8;
+        padding-top: 10px;
+    }
+    /* 第六个菜单的出现 */
+    .menu-list .sixth-menu-wrapper {
+        display: flex;
+    }
+    .menu-list .menu-inner-wrapper {
+        pointer-events: none;
+        flex: none;
+        width: 92%;
+        margin: 0 auto;
+        height:50px;
+        line-height: 50px;
+        border-bottom: 2px solid #d4d4d4;
+    }
+    .menu-list .menu-inner-wrapper .menu-inner {
+        font-size: 15px;
+        font-weight: 600;
+        color: #000;
+        width: 100%;
+    }
+    /* 箭头的出现 */
+    .menu-list .menu-inner-wrapper .nav-menu-angle {
+        display: inline-block;
+        position: relative;
+        top: 18px;
+        font-size: 20px;
+    }
+}
